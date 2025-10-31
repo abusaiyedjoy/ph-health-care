@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "CareNest",
   description: "A safe home for your health.",
+  icons: {
+    icon: "/logo.png",
+  }
 };
 
 export default function RootLayout({

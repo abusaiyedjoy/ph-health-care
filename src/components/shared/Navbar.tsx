@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Hospital, Menu } from "lucide-react";
+import { Menu, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -29,7 +29,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#3F3693] text-white">
-            <Hospital size={18} />
+            <Stethoscope size={20} />
           </div>
           <span className="text-lg font-semibold text-gray-900">CareNest</span>
         </Link>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { HeartPulse } from "lucide-react";
+import { Stethoscope } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -11,8 +11,8 @@ export default function Footer() {
           {/* Brand Section */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <div className="p-2 rounded-lg bg-linear-to-r from-indigo-600 to-purple-600 text-white">
-                <HeartPulse className="w-5 h-5" />
+              <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#3F3693] text-white">
+                <Stethoscope size={20} />
               </div>
               <h2 className="text-xl font-bold text-gray-900 dark:text-white">
                 CareNest
