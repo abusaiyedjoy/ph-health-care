@@ -49,7 +49,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Button className="border-2 border-[#3F3693] px-6 cursor-pointer bg-[#3F3693] hover:bg-[#342d7a] text-white rounded-lg font-semibold group relative overflow-hidden">
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
-            <Link href="/SignIn">Sign In</Link>
+            <Link href="/signin">Sign In</Link>
           </Button>
         </div>
 
@@ -84,7 +84,7 @@ export default function Navbar() {
                 <div className="flex flex-col gap-3 pt-6 border-t border-gray-200">
                   <Button className="border-2 border-[#3F3693] px-6 cursor-pointer bg-[#3F3693] hover:bg-[#342d7a] text-white rounded-lg font-semibold group relative overflow-hidden">
                     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
-                    <Link href="/SignIn">Sign In</Link>
+                    <Link href="/signin">Sign In</Link>
                   </Button>
                 </div>
               </div>
