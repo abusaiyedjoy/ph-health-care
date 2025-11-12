@@ -5,11 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -51,18 +47,9 @@ export default function Navbar() {
 
         {/* Right Buttons */}
         <div className="hidden md:flex items-center gap-3">
-          <Button
-            variant="outline"
-            className="border-2 border-[#3F3693] text-[#3F3693] hover:bg-[#3F3693]/10 font-semibold"
-            asChild
-          >
-            <Link href="/sign-in">Sign In</Link>
-          </Button>
-          <Button
-            asChild
-            className="bg-[#3F3693] hover:bg-[#352e7a] text-white font-semibold"
-          >
-            <Link href="/get-started">Get Started</Link>
+          <Button className="border-2 border-[#3F3693] px-6 cursor-pointer bg-[#3F3693] hover:bg-[#342d7a] text-white rounded-lg font-semibold group relative overflow-hidden">
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
+            <Link href="/SignIn">Sign In</Link>
           </Button>
         </div>
 
@@ -95,18 +82,9 @@ export default function Navbar() {
                 ))}
 
                 <div className="flex flex-col gap-3 pt-6 border-t border-gray-200">
-                  <Button
-                    variant="outline"
-                    className="border-2 border-[#3F3693] text-[#3F3693] hover:bg-[#3F3693]/10 font-semibold w-full"
-                    asChild
-                  >
-                    <Link href="/sign-in">Sign In</Link>
-                  </Button>
-                  <Button
-                    asChild
-                    className="bg-[#3F3693] hover:bg-[#352e7a] text-white font-semibold w-full"
-                  >
-                    <Link href="/get-started">Get Started</Link>
+                  <Button className="border-2 border-[#3F3693] px-6 cursor-pointer bg-[#3F3693] hover:bg-[#342d7a] text-white rounded-lg font-semibold group relative overflow-hidden">
+                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
+                    <Link href="/SignIn">Sign In</Link>
                   </Button>
                 </div>
               </div>

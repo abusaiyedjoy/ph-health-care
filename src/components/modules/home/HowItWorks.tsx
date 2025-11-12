@@ -9,9 +9,9 @@ import {
 
 export default function HowItWorks() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className=" bg-white">
       {/* How It Works Section */}
-      <section className="px-4 py-16 md:py-24 bg-linear-to-br from-indigo-50 to-purple-50">
+      <section className="px-4 py-16 md:py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="bg-purple-100 text-purple-700 mb-4">
