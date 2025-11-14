@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { Menu, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { getCookie } from "@/services/auth/tokenHandler";
+import LogoutButton from "./LogOutButton";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -15,9 +17,10 @@ const navLinks = [
   { name: "Contact", href: "#contact" },
 ];
 
-export default function Navbar() {
+export default async function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
+  const accessToken = await getCookie("accessToken");
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
@@ -49,7 +52,13 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Button className="border-2 border-[#3F3693] px-6 cursor-pointer bg-[#3F3693] hover:bg-[#342d7a] text-white rounded-lg font-semibold group relative overflow-hidden">
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
-            <Link href="/signin">Sign In</Link>
+            {accessToken ? (
+              <LogoutButton />
+            ) : (
+              <Link href="/login">
+                <Button>Login</Button>
+              </Link>
+            )}
           </Button>
         </div>
 
@@ -84,7 +93,13 @@ export default function Navbar() {
                 <div className="flex flex-col gap-3 pt-6 border-t border-gray-200">
                   <Button className="border-2 border-[#3F3693] px-6 cursor-pointer bg-[#3F3693] hover:bg-[#342d7a] text-white rounded-lg font-semibold group relative overflow-hidden">
                     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
-                    <Link href="/signin">Sign In</Link>
+                    {accessToken ? (
+                      <LogoutButton />
+                    ) : (
+                      <Link href="/login">
+                        <Button>Login</Button>
+                      </Link>
+                    )}
                   </Button>
                 </div>
               </div>

@@ -10,7 +10,7 @@ import {
 
 import data from "./data.json"
 
-export default async function DashboardLayout() {
+export default async function PatientDashboardLayout() {
   return (
     <SidebarProvider
       style={
