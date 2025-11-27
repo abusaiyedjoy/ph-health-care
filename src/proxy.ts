@@ -1,17 +1,13 @@
+import { NextResponse, NextRequest } from 'next/server'
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import type { NextRequest } from 'next/server';
-import { NextResponse } from 'next/server';
 import { getDefaultDashboardRoute, getRouteOwner, isAuthRoute, UserRole } from './lib/auth-utils';
-import { deleteCookie, getCookie } from './services/auth/tokenHandler';
-
-
-// This function can be marked `async` if using `await` inside
+import { deleteCookie } from './services/auth/tokenHandler';
+ 
+// This function can be marked async if using await inside
 export async function proxy(request: NextRequest) {
-    const pathname = request.nextUrl.pathname;
+   const pathname = request.nextUrl.pathname;
 
-    // const accessToken = request.cookies.get("accessToken")?.value || null;
-
-    const accessToken = await getCookie("accessToken") || null;
+    const accessToken = request.cookies.get("accessToken")?.value || null;
 
     let userRole: UserRole | null = null;
     if (accessToken) {
@@ -67,18 +63,9 @@ export async function proxy(request: NextRequest) {
 
     return NextResponse.next();
 }
-
-
-
+ 
 export const config = {
-    matcher: [
-        /*
-         * Match all request paths except for the ones starting with:
-         * - api (API routes)
-         * - _next/static (static files)
-         * - _next/image (image optimization files)
-         * - favicon.ico, sitemap.xml, robots.txt (metadata files)
-         */
-        '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.well-known).*)',
-    ],
+  matcher: [
+    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.well-known).*)',
+  ],
 }
